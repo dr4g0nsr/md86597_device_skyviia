@@ -1,0 +1,18 @@
+#
+#Please following the following format.
+#if none please, write "none".
+#
+#output binary name
+./SV8860_MLC.fw
+#boot header table. "boothdr_nand.txt" is for A3 only.
+./device/skyviia/skyviia_DVBT/boothdr_mlc.txt
+#u-boot_write file name:
+./device/skyviia/skyviia_DVBT/skysail_uboot_wl.bin
+#u-boot_nand file name:
+./device/skyviia/skyviia_DVBT/skysail_uboot_ld.bin
+#kernel image name:
+./device/skyviia/skyviia_DVBT/kernel_mlc
+#rootfs image name:
+./out/target/product/skyviia_DVBT/yaffs2_system.img
+#userdata fs image name:
+./out/target/product/skyviia_DVBT/yaffs2_user.img

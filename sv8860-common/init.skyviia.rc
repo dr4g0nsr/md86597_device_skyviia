@@ -1,0 +1,230 @@
+on early-init
+#    device mtd@misc 0460 radio diag
+
+on boot
+
+#    setprop net.dns1 192.168.100.3
+#    setprop net.dns2 208.67.222.222
+#    setprop net.dns3 168.95.1.1
+
+
+# unmap left alt to avoid console switch
+    setkey 0x0 0x38 0x0
+# device reset SEND+MENU+END
+    setkey 0x0 0xe7 0x706
+    setkey 0x0 0x8b 0x707
+
+    setkey 0x40 0xe7 0x706
+    setkey 0x40 0x8b 0x707
+
+    setkey 0x80 0xe7 0x706
+    setkey 0x80 0x8b 0x707
+
+    setkey 0xc0 0xe7 0x706
+    setkey 0xc0 0x8b 0x707
+    setkey 0xc0 0x6b 0x20c
+
+# create mountpoints and mount tmpfs for domain socket
+    mkdir /data/tmpfsmisc 0771 system system
+    mount tmpfs tmpfs /data/tmpfsmisc
+    symlink /data/tmpfsmisc /data/misc
+    
+# prepare folders for Wi-Fi & DHCP
+    mkdir /data/misc/wifi 0770 wifi wifi
+    mkdir /data/misc/wifi/sockets 0770 wifi wifi
+    mkdir /data/system/wpa_supplicant 0770 wifi system
+    mkdir /data/misc/dhcp 0770 dhcp dhcp
+    chown dhcp dhcp /data/misc/dhcp
+    
+# host.dat for QVOD
+	copy /system/etc/host.dat /data/host.dat
+	chmod 0777 /data/host.dat
+    
+    # bluetooth power up/down interface
+    chown bluetooth bluetooth /sys/class/rfkill/rfkill0/type
+    chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state
+    chmod 0660                /sys/class/rfkill/rfkill0/state
+
+on property:init.svc.wpa_supplicant=stopped
+    stop dhcpcd_wlan0
+
+# compass/accelerometer daemon
+# service akmd /system/bin/akmd
+#    user compass
+#    group compass misc input
+
+# wpa_supplicant start up service definition
+service wpa_supplicant /system/bin/logwrapper /system/bin/wpa_supplicant \
+    -Dwext -iwlan0 -c/data/system/wpa_supplicant/wpa_supplicant.conf -dd
+    user wifi
+    group wifi inet
+    socket wpa_wlan0 dgram 660 wifi wifi
+    disabled
+    oneshot
+
+# DHCP client servcie for Wi-Fi
+service dhcpcd_wlan0 /system/bin/logwrapper /system/bin/dhcpcd -BKL -d wlan0
+    disabled
+    oneshot
+
+# DHCP client service for Ethernet 
+service dhcpcd_eth0 /system/bin/dhcpcd -BKL eth0
+    disabled
+    oneshot
+
+#service hciattach /system/bin/hciattach \
+#    -n -s 115200 /dev/ttyHS0 texas 4000000 flow
+#    user bluetooth
+#    group bluetooth net_bt_admin
+#    disabled
+
+# set mac address
+service mac_address /system/bin/logwrapper /system/bin/ifconfig eth0 setmac
+    user root
+    group root
+    oneshot    
+    
+# link 3g modem for Internet connection
+#service link_3g /system/bin/logwrapper /system/bin/sh \
+#	/system/bin/3Gcnt.sh
+#    user root
+#    group root
+#    disabled
+#    oneshot
+
+# load audio setting on the booting state
+service audio_init /system/bin/logwrapper /system/bin/env_audio_exe audio_init
+    user root
+    group root
+    oneshot
+    
+# BT download service
+#service bt_download /system/bin/logwrapper /system/bin/transmission -g /data/system/transmission
+#    user system
+#    group system
+#    disabled
+#    oneshot
+
+# bugreport is triggered by the 'EDIT' keycode //KEY_LEFTSHIFT and KEY_MENU keycodes
+service bugreport /system/bin/bugreport -d -v -o /mnt/sdcard/bugreports/bugreport
+    disabled
+    oneshot
+    keycodes 112
+
+# SVSD for MPlayer
+service svsd /system/bin/svsd
+    user root
+    group root
+
+# Audio Server for MPlayer
+service audioserver /system/bin/audio_server
+    user root
+    group root
+
+# Audio Server2 for MPlayer
+service audioserver2 /system/bin/audio_server2
+    user root
+    group root
+
+# MPlayer wrapper which receives parameter for MPlayer from SkyPlayerService
+service mpserver /system/bin/logwrapper /system/bin/mpserver
+    user root
+    group root
+
+# TSPlayer wrapper which receives parameter for TSPlayer from SkyDTVService
+service tsserver /system/bin/logwrapper /system/bin/tsserver
+    user root
+    group root
+
+# TSPlayer wrapper which receives parameter for TSPlayer from SkyDTVService
+service pvrserver /system/bin/logwrapper /system/bin/pvrserver
+    user root
+    group root
+        
+# firmware upgrade service
+service fwupgrade /system/bin/logwrapper /system/bin/upgrade
+    user root
+    group root
+    disabled
+    oneshot
+    
+# env_exe wrapper which receives parameter for get/set code from nand flash
+service env_exe /system/bin/logwrapper /system/bin/env_exe
+    user root
+    group root
+    disabled
+    oneshot
+
+#  skyDMC wrapper which receives parameter for skyDMC from SkyDLNAService
+service skyDMC /system/bin/logwrapper /system/bin/skyDMC
+    user root
+    group root
+
+# umount network share
+service smb_umnt /system/bin/logwrapper /system/bin/smb_umnt
+    user root
+    group root
+    disabled
+    oneshot
+
+# mount network share
+service smb_mnt /system/bin/logwrapper /system/bin/smb_mnt
+    user root
+    group root
+    disabled
+    oneshot
+
+#  skyMasterClear wrapper which receives parameter for Setting to reboot & reset the default
+service skyMasterClear /system/bin/logwrapper /system/bin/masterclear
+    user root
+    group root
+    disabled
+    oneshot
+
+# autorun service for auto playback during production or digital signager.
+service autorun /system/bin/logwrapper
+    user root
+    group root
+    disabled
+    oneshot 
+
+# sjlin, module handler for usb gadget
+service modhandle /system/bin/logwrapper /system/bin/modhandle
+    user root
+    group root
+    disabled
+    oneshot
+
+# DVB-T scan channels 
+service set_scan /system/bin/logwrapper /system/bin/scan_f S 
+    user root
+    group root
+    disabled
+    oneshot
+
+# DVB-T epg service 
+service epgexec /system/bin/logwrapper /system/bin/epg 
+    user root
+    group root
+    disabled
+    oneshot
+
+# Set tuner power (0/1)
+#service tuner_set /system/bin/logwrapper /system/bin/tuner
+#    user root
+#    group root
+#    oneshot
+
+# williechen, pppd handler for PPPoE connection
+service pppd /system/bin/logwrapper /system/bin/pppd 
+    user root
+    group root
+    disabled
+    oneshot
+    
+# williechen, kill handler for kill PPPoE connection
+service kill /system/bin/logwrapper /system/bin/kill 
+    user root
+    group root
+    disabled
+    oneshot

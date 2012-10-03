@@ -1,0 +1,18 @@
+#
+#Please following the following format.
+#if none please, write "none".
+#
+#output binary name
+./SV8860.fw
+#boot header table. "boothdr_nand.txt" is for A3 only.
+./device/skyviia/sv886x/boothdr.txt
+#u-boot_write file name:
+./device/skyviia/sv886x/u-boot_wl.bin
+#u-boot_nand file name:
+./device/skyviia/sv886x/u-boot_ld.bin
+#kernel image name:
+./device/skyviia/sv886x/kernel
+#rootfs image name:
+./out/target/product/sv886x/ubi_system.img
+#userdata fs image name:
+./out/target/product/sv886x/ubi_user.img

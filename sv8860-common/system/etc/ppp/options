@@ -1,0 +1,9 @@
+# /etc/ppp/options -*- sh -*- general options for pppd
+
+pty '/system/bin/pppoe -I eth0 -p /data/system/ppp/pppoe-pid'
+noipdefault
+usepeerdns
+defaultroute
+user 
+password 
+logfile '/data/system/ppp/ppp-log'

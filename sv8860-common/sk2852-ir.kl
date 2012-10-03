@@ -1,0 +1,184 @@
+key 399   GRAVE
+key 2     1
+key 3     2
+key 4     3
+key 5     4
+key 6     5
+key 7     6
+key 8     7
+key 9     8
+key 10    9
+key 11    0
+# key 158   BACK              WAKE_DROPPED
+key 230   SOFT_RIGHT        WAKE
+key 60    SOFT_RIGHT        WAKE
+key 107   ENDCALL           WAKE_DROPPED
+key 62    ENDCALL           WAKE_DROPPED
+key 229   MENU              WAKE_DROPPED
+# key 139   MENU              WAKE_DROPPED // move to followings
+key 59    MENU              WAKE_DROPPED
+key 127   SEARCH            WAKE_DROPPED
+key 217   SEARCH            WAKE_DROPPED
+key 228   POUND
+key 227   STAR
+key 231   CALL              WAKE_DROPPED
+key 61    CALL              WAKE_DROPPED
+key 232   DPAD_CENTER       WAKE_DROPPED
+# key 108   DPAD_DOWN         WAKE_DROPPED
+# key 103   DPAD_UP           WAKE_DROPPED
+# key 102   HOME              WAKE // move to followings
+# key 105   DPAD_LEFT         WAKE_DROPPED
+# key 106   DPAD_RIGHT        WAKE_DROPPED
+# key 115   VOLUME_UP
+# key 114   VOLUME_DOWN
+# key 116   POWER             WAKE // move to followings
+key 212   CAMERA
+
+key 16    Q
+key 17    W
+key 18    E
+key 19    R
+key 20    T
+key 21    Y
+key 22    U
+key 23    I
+key 24    O
+key 25    P
+key 26    LEFT_BRACKET
+key 27    RIGHT_BRACKET
+key 43    BACKSLASH
+
+key 30    A
+key 31    S
+key 32    D
+key 33    F
+key 34    G
+key 35    H
+key 36    J
+key 37    K
+key 38    L
+key 39    SEMICOLON
+key 40    APOSTROPHE
+key 14    DEL
+        
+key 44    Z
+key 45    X
+key 46    C
+key 47    V
+key 48    B
+key 49    N
+key 50    M
+key 51    COMMA
+key 52    PERIOD
+key 53    SLASH
+key 28    ENTER
+
+####### Overrided by Skymedi R/C ##########        
+#key 56    ALT_LEFT
+#key 100   ALT_RIGHT
+#key 42    SHIFT_LEFT
+#key 54    SHIFT_RIGHT
+###########################################
+key 15    TAB
+key 57    SPACE
+key 150   EXPLORER
+key 155   ENVELOPE        
+
+key 12    MINUS
+key 13    EQUALS
+key 215   AT
+
+####### Skymedi R/C keypad mapping ##### 
+key 139   MENU              WAKE_DROPPED
+key 102   HOME              WAKE
+key 56    SKBONOFF
+key 116   POWER             WAKE
+
+key 97    REPEAT
+key 103   DPAD_UP           WAKE_DROPPED
+key 158   BACK              WAKE_DROPPED
+key 115   VOLUME_UP
+
+key 105   DPAD_LEFT         WAKE_DROPPED
+key 28    DPAD_CENTER       WAKE_DROPPED
+key 106   DPAD_RIGHT        WAKE_DROPPED
+key 114   VOLUME_DOWN
+
+key 164   MEDIA_PLAY_PAUSE
+key 108   DPAD_DOWN         WAKE_DROPPED
+key 166   MEDIA_STOP
+key 113   MUTE
+
+key 165   MEDIA_PREVIOUS
+key 168   MEDIA_REWIND
+key 159   MEDIA_FAST_FORWARD
+key 163   MEDIA_NEXT
+
+key 42    TVRES
+key 100   ROTATE
+key 29    ZOOM
+key 54    SLIDESHOW
+###########################################
+
+####### Zinwell R/C keypad mapping ##### 
+key 111   DEL
+key 119   MEDIA_PAUSE_STEP
+key 128   MEDIA_STOP
+key 176   EDIT
+key 207   MEDIA_PLAY		
+
+#key 233   Reserved
+key 234   ALL               WAKE_DROPPED
+key 235   MUSIC			  	WAKE_DROPPED
+key 236   PHOTO             WAKE_DROPPED
+key 237   MOVIE			  	WAKE_DROPPED
+
+#key 238   Reserved
+#key 239   Reserved  
+
+#key 240   Reserved
+#key 241   Reserved
+key 242   MEDIA_REP_1ORALL
+key 243   MEDIA_REP_ABMODE       
+#key 244   Reserved
+key 245   MEDIA_INS_REPLAY
+key 246   MEDIA_CM_SKIP
+
+#key 247   Reserved
+key 248   SPEAKER_LEFT_RIGHT
+    
+#key 249   Reserved
+#key 250   Reserved
+#key 251   Reserved
+#key 252   Reserved
+
+key 358   INFO              WAKE
+key 398   KEY_RED			WAKE_DROPPED
+key 399   KEY_GREEN			WAKE_DROPPED
+key 400   KEY_YELLO			WAKE_DROPPED
+key 401   KEY_BLUE			WAKE_DROPPED
+key 409   MEDIA_SLOW
+key 418   ZOOM_IN           
+key 419   ZOOM_OUT
+
+key 85    GADGET_CONNECT
+key 170   GADGET_DISCONNECT
+###########################################
+
+key 385 TV_RADIO
+key 369 TXT
+key 370 SUB
+key 365 EPG
+key 364 FAV
+key 167 REC
+key 392 AUDIO
+key 55  ASTERISK
+#key 111 HASH
+
+###################godfrey add for Page up/down ####################
+key 104 PAGE_UP
+key 109 PAGE_DOWN
+key 377 TV
+key 238 RECALL
+
+

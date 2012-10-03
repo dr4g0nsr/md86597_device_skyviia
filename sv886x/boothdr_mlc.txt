@@ -1,0 +1,63 @@
+//------------------------------------------------------------------------------
+// Following configuration is for 256M DDR2, CPU 0xC000001C 
+// For product:
+// 
+//------------------------------------------------------------------------------
+// HEADER TAG
+#SKYVIIA#SKYVIIA
+// VERSION, 2 bytes.
+0001
+// Flash regs, 28 bytes
+00 00 00 02 0B 06 06 12 32 51 B1 0B 03 00 2F 80 04 30 00 08 00 00 00 00 00 00 08 00
+// Page Read, 12 bytes
+00 30 00 E0 05 70 00 00 6e 00 1f 10
+// Page Write, 12 bytes
+80 10 11 81 85 70 10 00 fe 00 1f 11
+// Erase , 12 bytes
+60 d0 00 00 00 70 00 00 0e 00 3e 01
+// Extra info, 12 bytes.
+00 00 00 00 00 00 00 00 00 00 00 00
+// Vendor ID, Product ID
+FF FF FF FF FF FF FF FF
+// Firmware Setting, Bit0 SLC, Bit1 UBIFS
+0xFFFFFFFC
+//RAM size
+0x0000001C
+//CPU PLL, 0xC0FC910C
+0x00000000
+//DDRII PLL, 0xC0FC9118
+0x00000000
+//RESET CTL, 0xC0FC9108 
+0xC0008231
+//DDR PARAMETERE SETTING
+0xC0FC7004
+0x00010044
+0xC0FC7010
+0xBD4B47C2
+0xC0FC7018
+0x01960020
+0xC0FC701C
+0x00000121
+0xC0FC7014
+0x00000041
+0xC0FC9404
+0x00010044
+0xC0FC9410
+0xBD4B47C2
+0xC0FC9418
+0x01960020
+0xC0FC941C
+0x00000121
+0xC0FC9414
+0x00000041
+0xC0FC9114
+0xC0001350
+0xC0FC9114
+0xC0001350
+0xC0FC9400
+0xDE280B52
+0xC0FC7000
+0xDE280B52
+// EXTEND TAG 8860
+0x30363838
+

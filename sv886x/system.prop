@@ -1,0 +1,25 @@
+#
+# system.prop for this device
+#
+
+# Define Wi-Fi interface name
+wifi.interface = wlan0
+
+# Time between scans in seconds. Keep it high to minimize battery drain.
+# This only affects the case in which there are remembered access points,
+# but none are in range.
+wifi.supplicant_scan_interval = 45
+
+# For IR
+#android.keylayout.sk2852-ir = /system/usr/keylayout/sk2852-ir_qwerty.kl
+
+# For IR
+#android.keychar.sk2852-ir = /system/usr/keychars/sk2852-ir_qwerty.kcm
+
+# For MPlayer
+ro.bin.mplayer = /system/bin/mplayer
+ro.etc.mplayer = /etc/mplayer
+
+# enlarge dalvik heap size
+dalvik.vm.heapsize = 64m
+

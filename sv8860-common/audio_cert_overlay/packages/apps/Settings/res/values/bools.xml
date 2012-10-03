@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2009 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+  
+          http://www.apache.org/licenses/LICENSE-2.0
+  
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<resources>
+    <!-- Whether or not there is a notification led that is too intrusive to be pulsing
+         constantly -->
+    <bool name="has_intrusive_led">false</bool>
+    <!-- Whether or not the dock settings are to be displayed for this device when docked -->
+    <bool name="has_dock_settings">false</bool>
+    <!-- [BEGIN] Modify for custonization Dolby certification options. [Willie] [2011-04-15] -->
+    <!-- Whether or not the Dolby certification options -->
+    <bool name="has_dolby_cert_settings">true</bool>
+    <!-- Whether or not the Dolby/Output certification options -->
+    <bool name="has_dolby_cert_output_settings">true</bool>
+    <!-- Whether or not the Dolby/Stereo certification options -->
+    <bool name="has_dolby_cert_stereo_settings">true</bool>
+    <!-- Whether or not the Dolby/Compression certification options -->
+    <bool name="has_dolby_cert_compression_settings">true</bool>
+    <!-- Whether or not the Dolby/Drc certification options -->
+    <bool name="has_dolby_cert_drc_settings">true</bool>
+    <!-- Whether or not the Dolby/Dual mono certification options -->
+    <bool name="has_dolby_cert_dual_mono_settings">true</bool>
+    <!-- [END] -->
+    <!-- [BEGIN] Modify for custonization DTS certification options. [Willie] [2011-04-15] -->
+    <!-- Whether or not the DTS certification options -->
+    <bool name="has_dts_cert_settings">true</bool>
+    <!-- Whether or not the DTS/DRC certification options -->
+    <bool name="has_dts_cert_drc_settings">true</bool>
+    <!-- Whether or not the DTS/SPEAK certification options -->
+    <bool name="has_dts_cert_speak_settings">true</bool>
+    <!-- Whether or not the DTS/LFE certification options -->
+    <bool name="has_dts_cert_lfe_settings">true</bool>
+    <!-- Whether or not the DTS/Bass certification options -->
+    <bool name="has_dts_cert_bass_settings">true</bool>
+    <!-- [END] -->
+    <!-- [BEGIN] Modify for custonization Ethernet Mac address options. [Willie] [2011-09-09] -->
+    <!-- Whether or not the Macaddress options -->
+    <bool name="has_eth_macaddress_settings">false</bool>
+    <!-- [END] -->
+</resources>
