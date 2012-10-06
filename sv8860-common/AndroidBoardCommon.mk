@@ -154,10 +154,6 @@ PRODUCT_COPY_FILES += \
     device/skyviia/sv8860-common/system/usr/keylayout/qwertz102de.kl:system/usr/keylayout/default.kl \
     device/skyviia/sv8860-common/system/usr/keychars/qwertz102de.kcm.bin:system/usr/keychars/default.kcm.bin
 
-# copy alsa config
-PRODUCT_COPY_FILES += \
-    device/skyviia/sv8860-common/system/etc/asound.conf:system/etc/asound.conf
-
 # copy DMC related files:
 PRODUCT_COPY_FILES += \
     device/skyviia/sv8860-common/system/bin/skyDMC:system/bin/skyDMC
