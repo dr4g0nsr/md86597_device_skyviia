@@ -5,6 +5,8 @@
 extern "C"
 {
 #endif
+int fw_printenv (unsigned int hand);
+
 int fw_getenv (unsigned int hand, char *name, char *buf, int *length);
 
 int fw_setenv (unsigned int hand, char *tag, char *buf);
