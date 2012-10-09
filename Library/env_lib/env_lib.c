@@ -547,7 +547,7 @@ write_correct:
 	
 	return 0;	
 }
- 
+
 /*
  * Search the environment for a variable.
  * return -1 if no found.
@@ -598,6 +598,29 @@ int fw_getenv (unsigned int hand, char *name, char *buf, int *length)
 	}
 	
 	return -1;
+}
+
+int fw_printenv (unsigned int hand)
+{
+	char *env, *nxt, *env_end;
+	struct mtd_env_handle *handle;
+
+	if (hand==0)
+		return -1;
+
+	handle = (struct mtd_env_handle *) hand;
+
+	env_end = handle->data + ENV_SIZE;
+	for (env = handle->data; *env; env = nxt + 1) {
+		for (nxt = env; *nxt; ++nxt) {
+			if (nxt >= env_end) {
+				printf("## Error: environment not terminated\n");
+				return -1;
+			}
+		}
+		printf("%s\n", env);
+	}
+	return 0;
 }
 
 /*
