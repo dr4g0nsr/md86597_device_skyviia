@@ -59,14 +59,27 @@ int main(int argc, char *argv[])
 		}
 		else if(!strcmp(argv[0], "saveenv"))
 		{
-		    printf("saveenv function");
+			printf("saveenv function\n");
 			if (handle == 0)
 			{
 				printf("Can not open env_init\n");
 				return -1;
 			}
 			setData = 0;
-			fw_saveenv(handle);
+			rc = fw_saveenv(handle);
+			printf("fw_saveenv returned %i\n", rc);
+			env_close(handle);
+		}
+		else if(!strcmp(argv[0], "printenv"))
+		{
+			printf("printenv function\n");
+			handle = env_init();
+			if (handle == 0)
+			{
+				printf("Can not open env_init\n");
+				return -1;
+			}
+			rc = fw_printenv(handle);
 			env_close(handle);
 		}
 		else if(!strcmp(argv[0], "clearenv"))
